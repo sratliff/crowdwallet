@@ -5,7 +5,12 @@ if (Meteor.isClient) {
   Template.customerForm.events({
 
     'click button': function (event) {
+
       CrowdCostCust.insert({name: $('#inputCost').val(), income: $('#inputGrossIncome').val()});
+      alert($('#inputCost').val());
+      alert($('#inputService').val());
+      alert($('#inputLocation').val());
+
 
 
       Template.createReport.events({
@@ -14,10 +19,7 @@ if (Meteor.isClient) {
         },
 
         'click .remove': function (event) {
-
         }
-
-
       });
 
       Template.createReport.helpers({});
@@ -25,7 +27,6 @@ if (Meteor.isClient) {
     }
   });
 }
-
 
 if (Meteor.isServer) {
 

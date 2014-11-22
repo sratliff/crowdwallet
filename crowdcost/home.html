@@ -16,20 +16,25 @@
 	<script src="js/docs.min.js"></script>
     <title>CrowdCost Home</title>
 </head>
-
 	<body>
 		<div class="jumbotron">
 			<div class="containter">
-				<h2>crowdcost.co test</h2>
+				<h2>CrowdCost.co</h2>
 			</div>
 		</div>
 		<div class="container">
 			<div class="row">
-					<div class="col-md-12">
-						<div class="col-md-2" style="padding-right:0px;width:120px;">
-							<label for="inputCable" class="control-label labelPadding">Cable Provider:</label>
-						</div>
-					
+                    <div class="col-md-3" style="padding-right:0px;width:60px;">
+                        <label for="inputService" class="control-label labelPadding">Service:</label>
+                    </div>
+
+					<div class="col-md-3">
+						<select>
+							<option>Cable</option>
+							<option>Phone</option>
+							<option>Lawn</option>
+						</select>
+					</div>
 						<div class="col-md-3">
 							<select>
   								<option>Time Warner Cable</option>
@@ -37,24 +42,27 @@
   								<option>Cincinnati Bell</option>
 							</select>
 						</div>
+
 						<div class="col-md-2">
-							
-							<input type="text" class="col-md-12" id="inputCost" placeholder="Cost">
-							
+                            <input type="text" class="col-md-12" id="inputLocation" placeholder="Zipcode">
 						</div>
+
+                        <div class="col-md-2">
+                            <input type="text" class="col-md-12" id="inputCost" placeholder="Cost">
+                        </div>
 							
 						<div class="col-md-1">
 						{{> customerForm}}
-					  </div>	
-							
-					</div>
-					  
+					  	</div>
+
+
+
 			</div>
+        </div>
 			<div class="row">
 			
 					{{> createReport}}
 			</div>
-		</div>
 	</body>
 	
 	<template name="customerForm">
