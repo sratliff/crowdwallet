@@ -9,7 +9,9 @@ if (Meteor.isClient) {
       CrowdCostCust.insert({name: $('#inputCost').val(), income: $('#inputGrossIncome').val()});
       alert($('#inputCost').val());
       alert($('#inputService').val());
-      alert($('#inputLocation').val());
+      alert($('#serviceSelect option:selected').val());
+      alert($('#providerSelect option:selected').val());
+
 
 
 

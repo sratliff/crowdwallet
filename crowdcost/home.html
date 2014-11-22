@@ -25,21 +25,21 @@
 		<div class="container">
 			<div class="row">
                     <div class="col-md-3" style="padding-right:0px;width:60px;">
-                        <label for="inputService" class="control-label labelPadding">Service:</label>
+                        <label class="control-label labelPadding">Service:</label>
                     </div>
 
-					<div class="col-md-3">
-						<select>
-							<option>Cable</option>
-							<option>Phone</option>
-							<option>Lawn</option>
+					<div class="col-md-3" for="inputService">
+						<select id="serviceSelect">
+							<option value="cable">Cable</option>
+							<option value="phone">Phone</option>
+							<option value="lawn">Lawn</option>
 						</select>
 					</div>
-						<div class="col-md-3">
-							<select>
-  								<option>Time Warner Cable</option>
-  								<option>Comcast</option>
-  								<option>Cincinnati Bell</option>
+						<div class="col-md-3" for="inputProvider">
+                            <select id="providerSelect">
+  								<option value="twc">Time Warner Cable</option>
+  								<option value="cc">Comcast</option>
+  								<option value="cincibell">Cincinnati Bell</option>
 							</select>
 						</div>
 
