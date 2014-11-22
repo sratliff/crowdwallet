@@ -1,5 +1,6 @@
 CrowdCostCust = new Meteor.Collection("crowdCostCustomer");
 
+
 if (Meteor.isClient) {
 
   Template.customerForm.events({
@@ -11,6 +12,7 @@ if (Meteor.isClient) {
       alert($('#inputService').val());
       alert($('#serviceSelect option:selected').val());
       alert($('#providerSelect option:selected').val());
+
 
 
 
