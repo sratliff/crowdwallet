@@ -18,10 +18,10 @@
             $('#serviceSelect').change(function(){
                 if($('#serviceSelect option:selected').text() === 'Cable'){
                     $('i').attr('class', 'fa fa-thumbs-up fa-5x');
-                    $('#thumb').attr('color', '#18964e');
+                    $('#thumb').attr('color', '#18964e').attr('id', 'thumbs-up');
                 } else {
                     $('i').attr('class', 'fa fa-thumbs-down fa-5x').attr('fill', '#f00');
-                    $('#thumb').attr('color', '#f00');
+                    $('#thumb').attr('color', '#f00').attr('id', 'thumbs-down');
                 }
             });
             if($('#serviceSelect option:selected').text() === 'Cable'){
