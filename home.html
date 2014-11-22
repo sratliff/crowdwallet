@@ -1,0 +1,121 @@
+<head>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/docs.min.js"></script>
+    <title>Financial App Home</title>
+</head>
+
+	<body>
+		<div class="jumbotron">
+			<div class="containter">
+				<h2>Hello Financial World!</h2>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+			
+				<form class="form-horizontal" role="form" id="customerForm">
+					<div class="form-group">
+						<label for="inputName" class="col-md-2 control-label">Name</label>
+						<div class="col-md-4">
+							<input type="text" class="form-control" id="inputName" placeholder="Name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputGrossIncome" class="col-md-2 control-label">Income</label>
+							<div class="col-md-4">
+							<input type="text" class="form-control" id="inputGrossIncome" placeholder="Income">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputBillOne" class="col-md-2 control-label">Bill 1</label>
+							<div class="col-md-4">
+							<input type="text" class="form-control" id="inputBillOne" placeholder="Bill 1">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputBillTwo" class="col-md-2 control-label">Bill 2</label>
+							<div class="col-md-4">
+							<input type="text" class="form-control" id="inputBillTwo" placeholder="Bill 2">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputBillThree" class="col-md-2 control-label">Bill 3</label>
+							<div class="col-md-4">
+							<input type="text" class="form-control" id="inputBillThree" placeholder="Bill 3">
+						</div>
+					</div>
+				  <div class="form-group">
+					{{> custForm}}
+					{{> createReport}}
+				  </div>
+				</form>
+			</div>
+		</div>
+	</body>
+	
+	<template name="custForm">
+					<div class="col-md-2 col-md-offset-2">
+					<button type="submit" class="btn btn-default">Save</button>
+					</div>
+	</template>
+	
+	<template name="createReport">
+					<div class="col-md-2">
+					<button type="button" class="btn btn-primary" id="report">Create Report</button>
+					</div>
+					<div class="col-md-12">
+					<h2>Averages</h2>
+					<div class="table-responsive">
+						<table class="table">
+							<tr>
+								<th>Income</th>
+								<th>Bill 1</th>
+								<th>Bill 2</th>
+								<th>Bill 3</th>
+							</tr>
+							<tr>
+								<td>{{averageIncome}}</td>
+								<td>{{averageBill1}}</td>
+								<td>{{averageBill2}}</td>
+								<td>{{averageBill3}}</td>
+							</tr>
+						</table>
+					</div>
+					</div>
+		<h2>Entered Names and Incomes:</h2>
+		<button type="button" class="btn btn-primary remove">Remove All</button>
+		<div class="table-responsive">
+			<table class="table">
+				<tr>
+					<th>Name</th>
+					<th>Income</th>
+					<th>Bill 1</th>
+					<th>Bill 2</th>
+					<th>Bill 3</th>
+				</tr>
+				{{#each customers}}
+				<tr>
+					<td>{{name}}</td>
+					<td>{{income}}</td>
+					<td>{{bill1}}</td>
+					<td>{{bill2}}</td>
+					<td>{{bill3}}</td>
+				</tr>
+				{{/each}}
+			</table>
+		</div>
+		
+	</template>
