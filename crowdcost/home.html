@@ -18,12 +18,14 @@
             $('#serviceSelect').change(function(){
                 if($('#serviceSelect option:selected').text() === 'Cable'){
                     $('i').attr('class', 'fa fa-thumbs-up fa-5x').attr('id', 'thumbs-up');
+                    $( 'How did you do it? </br> <input type=text value='Give us some hints!'> </input>').insertAfter( $("#h2Div") );
                 } else {
                     $('i').attr('class', 'fa fa-thumbs-down fa-5x').attr('id', 'thumbs-down');
                 }
             });
             if($('#serviceSelect option:selected').text() === 'Cable'){
-                $('i').attr('class', 'fa fa-thumbs-up fa-5x').attr();
+                //$('i').attr('class', 'fa fa-thumbs-up fa-5x').attr();
+                $("<p>taco</p>").after($(".tacos"));
             } else {
                 $('i').attr('class', 'fa fa-thumbs-down fa-5x').attr();
             }
@@ -128,7 +130,7 @@
 
 	</body>
 	
-	<template name="customerForm">
+	<template name="customerForm" class="tacos">
 					<button type="submit" class="btn btn-default" onclick='document.getElementById("h2Div").style.display = "block";'>Save</button>
 	</template>
 	
