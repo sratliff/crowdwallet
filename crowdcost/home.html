@@ -1,6 +1,6 @@
 <head>
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap2.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<meta charset="utf-8">
@@ -14,40 +14,52 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/docs.min.js"></script>
-    <title>CostCrowd Home</title>
+    <title>CrowdCost Home</title>
 </head>
 
 	<body>
 		<div class="jumbotron">
 			<div class="containter">
-				<h2>costcrowd.co</h2>
+				<h2>crowdcost.co</h2>
 			</div>
 		</div>
 		<div class="container">
 			<div class="row">
 					<div class="col-md-12">
-					<label for="inputCable" class="col-md-2 control-label">Cable</label>
-						<div class="col-md-4">
-							<select class="form-control">
+						<div class="col-md-2" style="padding-right:0px;width:120px;">
+							<label for="inputCable" class="control-label labelPadding">Cable Provider:</label>
+						</div>
+					
+						<div class="col-md-3">
+							<select>
   								<option>Time Warner Cable</option>
   								<option>Comcast</option>
   								<option>Cincinnati Bell</option>
 							</select>
-							</div>
-						<input type="text" class="col-md-2" id="inputCost" placeholder="Cost">
+						</div>
+						<div class="col-md-2">
+							
+							<input type="text" class="col-md-12" id="inputCost" placeholder="Cost">
+							
+						</div>
+							
+						<div class="col-md-1">
+						{{> customerForm}}
+					  </div>	
+							
 					</div>
-				  <div class="form-group">
-					{{> custForm}}
+					  
+			</div>
+			<div class="row">
+			
 					{{> createReport}}
-				  </div>
 			</div>
 		</div>
 	</body>
 	
-	<template name="custForm">
-					<div class="col-md-2 col-md-offset-2">
+	<template name="customerForm
+	">
 					<button type="submit" class="btn btn-default">Save</button>
-					</div>
 	</template>
 	
 	<template name="createReport">
