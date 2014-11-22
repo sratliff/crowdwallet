@@ -1,4 +1,5 @@
 
+
 crowdcost/.idea/.name
 
 *.iml
@@ -16,3 +17,25 @@ crowdcost/.idea/scopes/scope_settings.xml
 crowdcost/.idea/vcs.xml
 
 crowdcost/.idea/workspace.xml
+.idea/*
+.idea/vcs.xml
+
+.idea/crowdwallet.iml
+
+.idea/crowdwallet.iml
+
+*.iml
+
+.idea/crowdwallet.iml
+
+.idea/encodings.xml
+
+.idea/scopes/scope_settings.xml
+
+.idea/modules.xml
+
+.idea/crowdwallet.iml
+
+*.iml
+
+
