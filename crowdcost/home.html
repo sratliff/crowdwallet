@@ -13,6 +13,24 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/docs.min.js"></script>
     <title>CrowdCost Home</title>
+    <script>
+        $(document).ready(function(){
+            $('#serviceSelect').change(function(){
+                if($('#serviceSelect option:selected').text() === 'Cable'){
+                    $('i').attr('class', 'fa fa-thumbs-up fa-5x');
+                    $('#thumb').attr('color', '#18964e');
+                } else {
+                    $('i').attr('class', 'fa fa-thumbs-down fa-5x').attr('fill', '#f00');
+                    $('#thumb').attr('color', '#f00');
+                }
+            });
+            if($('#serviceSelect option:selected').text() === 'Cable'){
+                $('i').attr('class', 'fa fa-thumbs-up fa-5x').attr();
+            } else {
+                $('i').attr('class', 'fa fa-thumbs-down fa-5x').attr();
+            }
+        })
+    </script>
 </head>
 
 	<body>
