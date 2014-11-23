@@ -9,43 +9,89 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link src="stylesheets/myStyles.css" rel="stylesheet">
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/docs.min.js"></script>
     <title>CrowdCost Home</title>
     <script>
-        function pick(){
+
 
             $(document).ready(function(){
-                if($('#serviceSelect option:selected').text() === 'Cable' ){
+                if($('#serviceSelect option:selected').text() === 'Phone' ){
                     $('i').attr('class', 'fa fa-thumbs-up fa-5x').attr('id', 'thumbs-up');
                     $('#textbox').show();
                     $('#link').hide();
-                    $('#map').attr("src", "http://www.kansascitystandard.com/startup/ut.png")
+                    $('#map').attr("src", "http://www.kansascitystandard.com/startup/img2.png");
+                    document.getElementById("overPay").style.display = "none";
+                    document.getElementById("underPay").style.display = "block";
                 } else {
                     $('i').attr('class', 'fa fa-thumbs-down fa-5x').attr('id', 'thumbs-down');
                     $('#textbox').hide();
                     $('#link').show();
-                    $('#map').attr("src", "http://www.kansascitystandard.com/startup/ut2.png")
+                    $('#map').attr("src", "http://www.kansascitystandard.com/startup/img1.png");
+                    document.getElementById("overPay").style.display = "block";
+                    document.getElementById("underPay").style.display = "none";
                 }
             });
-        }
         $(document).ready(function(){
             $("#link").hide();
             $('#serviceSelect2').change(function() {
-                if ($('#serviceSelect2 option:selected').text() === 'Cable') {
+                if ($('#serviceSelect2 option:selected').text() === 'Phone') {
                     $('i').attr('class', 'fa fa-thumbs-up fa-5x');
                     $('#textbox').show();
                     $('#link').hide();
-                    $('#map').attr("src", "http://www.kansascitystandard.com/startup/ut.png")
+                    $('#map').attr("src", "http://www.kansascitystandard.com/startup/img2.png");
+                    document.getElementById("overPay").style.display = "none";
+                    document.getElementById("underPay").style.display = "block";
                 } else {
                     $('i').attr('class', 'fa fa-thumbs-down fa-5x');
                     $('#textbox').hide();
                     $('#link').show();
-                    $('#map').attr("src", "http://www.kansascitystandard.com/startup/ut2.png")
+                    $('#map').attr("src", "http://www.kansascitystandard.com/startup/img1.png");
+                    document.getElementById("overPay").style.display = "block";
+                    document.getElementById("underPay").style.display = "none";
                 }
             });
-        })
+        });
+
+        $(document).ready(function(){
+            $('#serviceSelect').change(function(){
+                if ($('#serviceSelect').val() == "phone"){
+                    //alert($('#serviceSelect').val());
+
+                    var PHONES = new Array("Verizon","AT&T","T-Mobile","Sprint");
+                    $("#providerSelect").find('option').remove();
+                    for(i=0; i < PHONES.length; i++){
+                        $("#providerSelect").append('<option value="'+PHONES[i]+'">'+PHONES[i]+'</option>');
+                    }
+
+                    $.each(result, function() {
+                        options.append($("<option />"));
+                    });
+
+                }
+            });
+        });
+
+        $(document).ready(function(){
+            $('#serviceSelect').change(function(){
+                if ($('#serviceSelect').val() == "cable"){
+                    //alert($('#serviceSelect').val());
+
+                    var PHONES = new Array("Time Warner Cable","Comcast","Cincinnati Bell");
+                    $("#providerSelect").find('option').remove();
+                    for(i=0; i < PHONES.length; i++){
+                        $("#providerSelect").append('<option value="'+PHONES[i]+'">'+PHONES[i]+'</option>');
+                    }
+
+                    $.each(result, function() {
+                        options.append($("<option />"));
+                    });
+
+                }
+            });
+        });
     </script>
 </head>
 
@@ -53,7 +99,7 @@
 
 <div class="jumbotron">
     <div class="containter">
-        <h2>crowdcost.co test</h2>
+        <h2>crowdcost.co</h2>
     </div>
 </div>
 <div class="container">
@@ -67,7 +113,36 @@
             <select id="serviceSelect">
                 <option value="cable">Cable</option>
                 <option value="phone">Phone</option>
-                <option value="lawn">Lawn</option>
+            </select>
+        </div>
+        <div class="col-md-3" for="inputProvider">
+            <select id="providerSelect">
+                <option value="twc">Time Warner Cable</option>
+                <option value="cc">Comcast</option>
+                <option value="cincibell">Cincinnati Bell</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="col-md-12" id="inputLocation" placeholder="Zipcode">
+        </div>
+        <div class="col-md-2">
+
+            <input type="text" class="col-md-12" id="inputCost" placeholder="Cost">
+
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" style="padding-right:0px;width:60px;">
+            <label class="control-label labelPadding">Service:</label>
+        </div>
+
+        <div class="col-md-3" for="inputService">
+            <select id="serviceSelect">
+                <option value="cable">Cable</option>
+                <option value="phone">Phone</option>
             </select>
         </div>
         <div class="col-md-3" for="inputProvider">
@@ -111,7 +186,8 @@
                     <i class="fa fa-thumbs-up fa-5x" id="thumbsUp"></i>
                 </div>
                 <div class="col-md-4" style="padding-top: 35px;padding-left:25px;">
-                    <p>You are paying $$$ under the median.</p>
+					<div id="underPay" style="display: none;">You are paying $11.75 under the average</div>
+					<div id="overPay" style="display: none;">You are paying $7.50 over the average</div>
                 </div>
                 <div class="col-md-2" style="padding-top: 35px;" >
                     <select id="serviceSelect2">
@@ -120,8 +196,8 @@
                     </select>
 
                 </div> <br />
-                <div id="link">
-                    <a href="http://fiber.google.com">Why not try something cheaper?</a>
+                <div class="col-md-4" id="link">
+                    <a href="http://www.cincinnatibell.com/fioptics/" target="_blank">Why not try something cheaper?</a>
                 </div>
             </div>
             <div id="textbox">
