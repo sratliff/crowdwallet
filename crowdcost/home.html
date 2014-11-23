@@ -31,6 +31,7 @@
 			});
 		}
         $(document).ready(function(){
+
 			$("#link").hide();
             $('#serviceSelect2').change(function() {
                 if ($('#serviceSelect2 option:selected').text() === 'Cable') {
@@ -44,6 +45,26 @@
                     $('#link').show();
                     $('#map').attr("src", "http://www.kansascitystandard.com/startup/ut2.png")
                 }
+
+            $('#serviceSelect').change(function(){
+                    if ($('#serviceSelect').val() == "phone"){
+                    //alert($('#serviceSelect').val());
+
+
+                    var PHONES = new Array("Verizon","AT&T","T-Mobile","Sprint");
+                    $("#providerSelect").find('option').remove();
+                    for(i=0; i < PHONES.length; i++){
+                        $("#providerSelect").append('<option value="'+PHONES[i]+'">'+PHONES[i]+'</option>');
+                    }
+
+
+                    $.each(result, function() {
+                        options.append($("<option />"));
+                    });
+
+
+				};
+
             });
         })
     </script>
@@ -154,7 +175,9 @@
 	</body>
 	
 	<template name="customerForm">
-					<button type="submit" class="btn btn-default" onclick='document.getElementById("h2Div").style.display = "block"; pick();'>Save</button>
+
+<button type="submit" class="btn btn-default" onclick='document.getElementById("h2Div").style.display = "block";'>Submit</button>
+
 	</template>
 	
 	<template name="createReport">
