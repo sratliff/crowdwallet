@@ -16,6 +16,8 @@
     <script src="js/docs.min.js"></script>
     <title>CrowdCost Home</title>
     <script>
+
+
         $(document).ready(function(){
             if($('#serviceSelect option:selected').text() === 'Phone' ){
                 $('i').attr('class', 'fa fa-thumbs-up fa-5x').attr('id', 'thumbs-up');
@@ -34,7 +36,7 @@
             }
         });
         $(document).ready(function(){
-            $("#link").hide();
+            $("#link").show();
             $('#serviceSelect2').change(function() {
                 if ($('#serviceSelect2 option:selected').text() === 'Phone') {
                     $('i').attr('class', 'fa fa-thumbs-up fa-5x');
@@ -145,8 +147,8 @@
                     <i class="fa fa-thumbs-up fa-5x" id="thumbsUp"></i>
                 </div>
                 <div class="col-md-4 payment pull-left">
-                    <div id="underPay">Amount under the average: <span class="thumbs-up">$11.75</span></div>
-                    <div id="overPay">Amount over the average: <span class="thumbs-down">$7.50</span></div>
+                    <div id="underPay">You are paying <span class="thumbs-up">$11.75</span> under the average!</div>
+                    <div id="overPay">You are paying <span class="thumbs-down">$7.50</span> over the average!</div>
                 </div>
                 <div class="col-md-7">
                     <select id="serviceSelect2">
@@ -159,8 +161,7 @@
                     <a href="http://www.cincinnatibell.com/fioptics/" target="_blank">Why not try something cheaper?</a>
                 </div>
             </div>
-            <div id="textbox">
-            </div>
+            <a id="targetDiv"></a>
             <div class="row">
                 <!--<div class="col-md-3">
     <textarea class="form-control" rows="3"></textarea>
@@ -185,7 +186,8 @@
 
 </body>
 <template name="customerForm">
-    <button type="submit" class="btn btn-confirm" onclick='document.getElementById("h2Div").style.display = "block"; pick();'>Save</button>
+
+    <button type="submit" id="submit" class="btn btn-confirm" onclick='document.getElementById("h2Div").style.display = "block"; pick();'><a href="#link">Save</a></button>
 </template>
 <template name="createReport">
     <!--<div class="col-md-2">
