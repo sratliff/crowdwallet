@@ -98,113 +98,79 @@
 <body>
 
 <div class="jumbotron">
-    <div class="containter">
-        <h2>crowdcost.co</h2>
+    <div class="container">
+        <img src="crowdcostlogotext-green.png">
     </div>
 </div>
 <div class="container">
-
     <div class="row">
-        <div class="col-md-3" style="padding-right:0px;width:60px;">
+        <div class="col-md-12 centered">
             <label class="control-label labelPadding">Service:</label>
-        </div>
-
-        <div class="col-md-3" for="inputService">
             <select id="serviceSelect">
                 <option value="cable">Cable</option>
                 <option value="phone">Phone</option>
             </select>
-        </div>
-        <div class="col-md-3" for="inputProvider">
             <select id="providerSelect">
                 <option value="twc">Time Warner Cable</option>
                 <option value="cc">Comcast</option>
                 <option value="cincibell">Cincinnati Bell</option>
             </select>
+            <input type="text" id="inputLocation" placeholder="Zipcode">
+            <input type="text" id="inputCost" placeholder="Cost">
         </div>
-        <div class="col-md-2">
-            <input type="text" class="col-md-12" id="inputLocation" placeholder="Zipcode">
-        </div>
-        <div class="col-md-2">
-
-            <input type="text" class="col-md-12" id="inputCost" placeholder="Cost">
-
-        </div>
-
-
     </div>
-
     <div class="row">
-        <div class="col-md-3" style="padding-right:0px;width:60px;">
+        <div class="col-md-12 centered">
             <label class="control-label labelPadding">Service:</label>
-        </div>
-
-        <div class="col-md-3" for="inputService">
             <select id="serviceSelect">
                 <option value="cable">Cable</option>
                 <option value="phone">Phone</option>
             </select>
-        </div>
-        <div class="col-md-3" for="inputProvider">
             <select id="providerSelect">
                 <option value="twc">Time Warner Cable</option>
                 <option value="cc">Comcast</option>
                 <option value="cincibell">Cincinnati Bell</option>
             </select>
+            <input type="text" id="inputLocation" placeholder="Zipcode">
+            <input type="text" id="inputCost" placeholder="Cost">
         </div>
-        <div class="col-md-2">
-            <input type="text" class="col-md-12" id="inputLocation" placeholder="Zipcode">
-        </div>
-        <div class="col-md-2">
-
-            <input type="text" class="col-md-12" id="inputCost" placeholder="Cost">
-
-        </div>
-
-        <div class="col-md-1">
+        <div class="col-md-12 onlythis">
 			{{> customerForm}}
         </div>
-
     </div>
 </div>
 <div class="row">
 	{{> createReport}}
 </div>
-<br />
-<br />
-<br />
-<br />
 <div class="row" >
     <hr/>
     <div id="h2Div" style="display:none;">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="row">
+        <div class="col-md-11 col-md-offset-1">
+            <div class="row bottomsup">
                 <div class="col-md-4 col-md-offset-1">
                     <img class="img-responsive" alt="Responsive image" id="map">
                 </div>
-                <div class="col-md-1 " style="padding-top: 10px;">
+                <div class="col-md-2">
                     <i class="fa fa-thumbs-up fa-5x" id="thumbsUp"></i>
                 </div>
-                <div class="col-md-4" style="padding-top: 35px;padding-left:25px;">
-					<div id="underPay" style="display: none;">You are paying $11.75 under the average</div>
-					<div id="overPay" style="display: none;">You are paying $7.50 over the average</div>
+                <div class="col-md-4 payment pull-left">
+					<div id="underPay">Amount under the average: <span class="thumbs-up">$11.75</span></div>
+					<div id="overPay">Amount over the average: <span class="thumbs-down">$7.50</span></div>
                 </div>
-                <div class="col-md-2" style="padding-top: 35px;" >
+                <div class="col-md-7">
                     <select id="serviceSelect2">
                         <option>Cable</option>
                         <option>Phone</option>
                     </select>
-
-                </div> <br />
+                </div> 
+                <br />
                 <div class="col-md-4" id="link">
                     <a href="http://www.cincinnatibell.com/fioptics/" target="_blank">Why not try something cheaper?</a>
                 </div>
             </div>
             <div id="textbox">
             </div>
-
             <div class="row">
-
                 <!--<div class="col-md-3">
     <textarea class="form-control" rows="3"></textarea>
     </div>
@@ -228,11 +194,9 @@
 </div>-->
 
 </body>
-
 <template name="customerForm">
-    <button type="submit" class="btn btn-default" onclick='document.getElementById("h2Div").style.display = "block"; pick();'>Save</button>
+    <button type="submit" class="btn btn-confirm" onclick='document.getElementById("h2Div").style.display = "block"; pick();'>Save</button>
 </template>
-
 <template name="createReport">
     <!--<div class="col-md-2">
 					<button type="button" class="btn btn-primary" id="report">Create Report</button>
