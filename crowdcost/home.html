@@ -1,3 +1,4 @@
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,25 +16,23 @@
     <script src="js/docs.min.js"></script>
     <title>CrowdCost Home</title>
     <script>
-
-
-            $(document).ready(function(){
-                if($('#serviceSelect option:selected').text() === 'Phone' ){
-                    $('i').attr('class', 'fa fa-thumbs-up fa-5x').attr('id', 'thumbs-up');
-                    $('#textbox').show();
-                    $('#link').hide();
-                    $('#map').attr("src", "http://www.kansascitystandard.com/startup/img2.png");
-                    document.getElementById("overPay").style.display = "none";
-                    document.getElementById("underPay").style.display = "block";
-                } else {
-                    $('i').attr('class', 'fa fa-thumbs-down fa-5x').attr('id', 'thumbs-down');
-                    $('#textbox').hide();
-                    $('#link').show();
-                    $('#map').attr("src", "http://www.kansascitystandard.com/startup/img1.png");
-                    document.getElementById("overPay").style.display = "block";
-                    document.getElementById("underPay").style.display = "none";
-                }
-            });
+        $(document).ready(function(){
+            if($('#serviceSelect option:selected').text() === 'Phone' ){
+                $('i').attr('class', 'fa fa-thumbs-up fa-5x').attr('id', 'thumbs-up');
+                $('#textbox').show();
+                $('#link').hide();
+                $('#map').attr("src", "http://www.kansascitystandard.com/startup/img2.png");
+                document.getElementById("overPay").style.display = "none";
+                document.getElementById("underPay").style.display = "block";
+            } else {
+                $('i').attr('class', 'fa fa-thumbs-down fa-5x').attr('id', 'thumbs-down');
+                $('#textbox').hide();
+                $('#link').show();
+                $('#map').attr("src", "http://www.kansascitystandard.com/startup/img1.png");
+                document.getElementById("overPay").style.display = "block";
+                document.getElementById("underPay").style.display = "none";
+            }
+        });
         $(document).ready(function(){
             $("#link").hide();
             $('#serviceSelect2').change(function() {
@@ -54,41 +53,33 @@
                 }
             });
         });
-
         $(document).ready(function(){
             $('#serviceSelect').change(function(){
                 if ($('#serviceSelect').val() == "phone"){
                     //alert($('#serviceSelect').val());
-
                     var PHONES = new Array("Verizon","AT&T","T-Mobile","Sprint");
                     $("#providerSelect").find('option').remove();
                     for(i=0; i < PHONES.length; i++){
                         $("#providerSelect").append('<option value="'+PHONES[i]+'">'+PHONES[i]+'</option>');
                     }
-
                     $.each(result, function() {
                         options.append($("<option />"));
                     });
-
                 }
             });
         });
-
         $(document).ready(function(){
             $('#serviceSelect').change(function(){
                 if ($('#serviceSelect').val() == "cable"){
                     //alert($('#serviceSelect').val());
-
                     var PHONES = new Array("Time Warner Cable","Comcast","Cincinnati Bell");
                     $("#providerSelect").find('option').remove();
                     for(i=0; i < PHONES.length; i++){
                         $("#providerSelect").append('<option value="'+PHONES[i]+'">'+PHONES[i]+'</option>');
                     }
-
                     $.each(result, function() {
                         options.append($("<option />"));
                     });
-
                 }
             });
         });
@@ -135,12 +126,12 @@
             <input type="text" id="inputCost" placeholder="Cost">
         </div>
         <div class="col-md-12 onlythis">
-			{{> customerForm}}
+            {{> customerForm}}
         </div>
     </div>
 </div>
 <div class="row">
-	{{> createReport}}
+    {{> createReport}}
 </div>
 <div class="row" >
     <hr/>
@@ -154,15 +145,15 @@
                     <i class="fa fa-thumbs-up fa-5x" id="thumbsUp"></i>
                 </div>
                 <div class="col-md-4 payment pull-left">
-					<div id="underPay">Amount under the average: <span class="thumbs-up">$11.75</span></div>
-					<div id="overPay">Amount over the average: <span class="thumbs-down">$7.50</span></div>
+                    <div id="underPay">Amount under the average: <span class="thumbs-up">$11.75</span></div>
+                    <div id="overPay">Amount over the average: <span class="thumbs-down">$7.50</span></div>
                 </div>
                 <div class="col-md-7">
                     <select id="serviceSelect2">
                         <option>Cable</option>
                         <option>Phone</option>
                     </select>
-                </div> 
+                </div>
                 <br />
                 <div class="col-md-4" id="link">
                     <a href="http://www.cincinnatibell.com/fioptics/" target="_blank">Why not try something cheaper?</a>
@@ -189,7 +180,6 @@
         <div class="col-md-6 col-md-offset-3">
             <h2>Thank You For Your Feedback!</h2>
         </div>
-
     </div>
 </div>-->
 
