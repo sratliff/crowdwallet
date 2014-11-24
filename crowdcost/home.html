@@ -23,6 +23,7 @@
                 $('i').attr('class', 'fa fa-thumbs-up fa-5x').attr('id', 'thumbs-up');
                 $('#textbox').show();
                 $('#link').hide();
+                $('.share').show();
                 $('#map').attr("src", "http://www.kansascitystandard.com/startup/img2.png");
                 document.getElementById("overPay").style.display = "none";
                 document.getElementById("underPay").style.display = "block";
@@ -30,6 +31,7 @@
                 $('i').attr('class', 'fa fa-thumbs-down fa-5x').attr('id', 'thumbs-down');
                 $('#textbox').hide();
                 $('#link').show();
+                $('.share').hide();
                 $('#map').attr("src", "http://www.kansascitystandard.com/startup/img1.png");
                 document.getElementById("overPay").style.display = "block";
                 document.getElementById("underPay").style.display = "none";
@@ -42,6 +44,7 @@
                     $('i').attr('class', 'fa fa-thumbs-up fa-5x');
                     $('#textbox').show();
                     $('#link').hide();
+                    $('.share').show();
                     $('#map').attr("src", "http://www.kansascitystandard.com/startup/img2.png");
                     document.getElementById("overPay").style.display = "none";
                     document.getElementById("underPay").style.display = "block";
@@ -49,6 +52,7 @@
                     $('i').attr('class', 'fa fa-thumbs-down fa-5x');
                     $('#textbox').hide();
                     $('#link').show();
+                    $('.share').hide();
                     $('#map').attr("src", "http://www.kansascitystandard.com/startup/img1.png");
                     document.getElementById("overPay").style.display = "block";
                     document.getElementById("underPay").style.display = "none";
@@ -160,6 +164,10 @@
                 <div class="col-md-4" id="link">
                     <a href="http://www.cincinnatibell.com/fioptics/" target="_blank">Why not try something cheaper?</a>
                 </div>
+                <div class="col-md-2">
+                    <div class="share"><a href="http://facebook.com">Share Your Success!</a></div>
+                </div>
+
             </div>
             <a id="targetDiv"></a>
             <div class="row">
@@ -187,7 +195,7 @@
 </body>
 <template name="customerForm">
 
-    <button type="submit" id="submit" class="btn btn-confirm" onclick='document.getElementById("h2Div").style.display = "block"; pick();'><a href="#link">Save</a></button>
+    <button type="submit" id="submit" class="btn btn-confirm" onclick='document.getElementById("h2Div").style.display = "block"; pick();'><a href="#link">Submit</a></button>
 </template>
 <template name="createReport">
     <!--<div class="col-md-2">
