@@ -1,0 +1,64 @@
+body{
+	background-color: #363636;
+	color: #929292;
+}
+
+img {
+	width: 400px;
+}
+
+a:link {
+	color: #644E2B;
+}
+
+input {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	height: 48px;
+	width: 300px;
+	font-size: 32px;
+	margin: 10px;
+	text-align: center;
+	font-family: extralight;
+}
+
+input[type=submit] {
+	border: 3px solid white;
+	background: #18964E;
+	color: #FFFFFF;
+	font-family: lobster;
+}
+.container {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.header {
+	
+}
+
+.main {
+	font-size: 16px;
+}
+
+.footer {
+	font-size: 10px;
+}
+
+@font-face {
+    font-family: lobster;
+    src: url(fonts/LobsterTwoRegulat.otf);
+    font-weight: bold;
+} 
+@font-face {
+    font-family: extralight;
+    src: url(fonts/FiraSans-ExtraLight.otf);
+    font-weight: bold;
+} 
+@font-face {
+    font-family: extrabold;
+    src: url(fonts/FiraSans-ExtraBold.otf);
+    font-weight: bold;
+}
