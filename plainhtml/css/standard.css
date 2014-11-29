@@ -27,7 +27,7 @@ input[type=submit] {
 	border: 3px solid white;
 	background: #18964E;
 	color: #FFFFFF;
-	font-family: lobster;
+	font-family: lobster, "Comic Sans MS";
 }
 .container {
 	width: 500px;
@@ -49,16 +49,13 @@ input[type=submit] {
 
 @font-face {
     font-family: lobster;
-    src: url(fonts/LobsterTwoRegulat.otf);
-    font-weight: bold;
+    src: url(../fonts/lobsteritalic.otf);
 } 
 @font-face {
     font-family: extralight;
-    src: url(fonts/FiraSans-ExtraLight.otf);
-    font-weight: bold;
+    src: url(../fonts/FiraSans-ExtraLight.otf);
 } 
 @font-face {
     font-family: extrabold;
-    src: url(fonts/FiraSans-ExtraBold.otf);
-    font-weight: bold;
+    src: url(../fonts/FiraSans-ExtraBold.otf);
 }
